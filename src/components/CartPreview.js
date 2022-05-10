@@ -42,7 +42,7 @@ const CartPreview = ({ itemCount, clearCart, closeCartPreview, isMobile }) => {
             </div>
           )}
           <Link
-            to="/checkout"
+            to="/ecommerce-product-page/checkout"
             className={styles.button}
             onClick={closeCartPreview}
           >

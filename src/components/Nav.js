@@ -40,7 +40,7 @@ const Nav = ({
         <div className={styles.menuIcon} onClick={showMenu}>
           <MenuIcon />
         </div>
-        <Link to="/">
+        <Link to="/ecommerce-product-page/">
           <Logo />
         </Link>
         <Links device="desktop" />
@@ -63,10 +63,10 @@ const Nav = ({
             />
           )}
         </div>
-        <Link to="/user">
+        <Link to="/ecommerce-product-page/user">
           <img
             className={`${styles.avatar} ${
-              pathname === "/user" && styles.avatarActive
+              pathname === "/ecommerce-product-page/user" && styles.avatarActive
             }`}
             src={require("../images/image-avatar.png")}
             alt="user"

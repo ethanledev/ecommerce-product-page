@@ -48,14 +48,14 @@ const App = () => {
         setShowCartPreview={setShowCartPreview}
       ></Nav>
       <Routes>
-        <Route path="/" element={element} />
-        <Route path="/collections" element={element} />
-        <Route path="/men" element={element} />
-        <Route path="/women" element={element} />
-        <Route path="/about" element={element} />
-        <Route path="/contact" element={element} />
-        <Route path="/checkout" element={element} />
-        <Route path="/user" element={element} />
+        <Route path="/ecommerce-product-page" element={element} />
+        <Route path="/ecommerce-product-page/collections" element={element} />
+        <Route path="/ecommerce-product-page/men" element={element} />
+        <Route path="/ecommerce-product-page/women" element={element} />
+        <Route path="/ecommerce-product-page/about" element={element} />
+        <Route path="/ecommerce-product-page/contact" element={element} />
+        <Route path="/ecommerce-product-page/checkout" element={element} />
+        <Route path="/ecommerce-product-page/user" element={element} />
       </Routes>
     </div>
   );

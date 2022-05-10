@@ -3,7 +3,13 @@ import styles from "./Links.module.css";
 import { ReactComponent as CloseIcon } from "../images/icon-close.svg";
 import { useRef } from "react";
 
-const ROUTES = ["/collections", "/men", "/women", "/about", "/contact"];
+const ROUTES = [
+  "/ecommerce-product-page/collections",
+  "/ecommerce-product-page/men",
+  "/ecommerce-product-page/women",
+  "/ecommerce-product-page/about",
+  "/ecommerce-product-page/contact",
+];
 
 const Links = ({ device, hideMenu }) => {
   const { pathname } = useLocation();
@@ -22,7 +28,7 @@ const Links = ({ device, hideMenu }) => {
         className={`${styles.link} ${pathname === route && styles.active}`}
         onClick={hideMenu}
       >
-        <Link to={route}>{route.split("/")[1]}</Link>
+        <Link to={route}>{route.split("/ecommerce-product-page/")[1]}</Link>
       </div>
     ));
   };
