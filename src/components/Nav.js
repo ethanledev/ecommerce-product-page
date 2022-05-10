@@ -32,7 +32,7 @@ const Nav = ({
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [setShowCartPreview]);
 
   return (
     <nav className={styles.container}>
