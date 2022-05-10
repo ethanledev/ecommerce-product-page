@@ -54,7 +54,6 @@ svg {
   display: flex;
   justify-content: space-between;
   padding: 0;
-  margin: 0 15rem;
   border-bottom: 0.1rem solid var(--grayish-blue);
   height: 10rem;
 }
@@ -130,10 +129,6 @@ svg {
   .cartPreviewContainer {
     right: 4.5rem;
     top: 8.5rem;
-  }
-
-  .container {
-    margin: 0 4.5rem;
   }
 }
 
