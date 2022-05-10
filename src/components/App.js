@@ -5,13 +5,21 @@ import Page from "./Page";
 import { useState } from "react";
 import Links from "./Links";
 import LightBox from "./LightBox";
+import CartPreview from "./CartPreview";
 
 const App = () => {
   const [itemCount, setItemCount] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
   const [showLightBox, setShowLightBox] = useState(false);
+  const [showCartPreview, setShowCartPreview] = useState(false);
 
-  const element = <Page itemCount={itemCount} setItemCount={setItemCount} />;
+  const element = (
+    <Page
+      itemCount={itemCount}
+      setItemCount={setItemCount}
+      showLightBox={() => setShowLightBox(true)}
+    />
+  );
 
   return (
     <div className={styles.container}>
@@ -22,16 +30,22 @@ const App = () => {
           setShowMenu={setShowMenu}
         />
       )}
-      {showLightBox && (
-        <LightBox
-          device="desktop"
-          hideLightBox={() => setShowLightBox(false)}
+      {showLightBox && <LightBox hideLightBox={() => setShowLightBox(false)} />}
+      {showCartPreview && (
+        <CartPreview
+          isMobile={true}
+          itemCount={itemCount}
+          clearCart={() => setItemCount(0)}
+          closeCartPreview={() => setShowCartPreview(false)}
         />
       )}
       <Nav
-        itemCount={itemCount}
         showMenu={() => setShowMenu(true)}
+        itemCount={itemCount}
+        showCartPreview={showCartPreview}
         clearCart={() => setItemCount(0)}
+        closeCartPreview={() => setShowCartPreview(false)}
+        setShowCartPreview={setShowCartPreview}
       ></Nav>
       <Routes>
         <Route path="/" element={element} />

@@ -1,14 +1,23 @@
+import { useRef } from "react";
 import styles from "./LightBox.module.css";
-import { ReactComponent as CloseIcon } from "../images/icon-close.svg";
-import { ReactComponent as NextIcon } from "../images/icon-next.svg";
-import { ReactComponent as PreviousIcon } from "../images/icon-previous.svg";
+import ProductDisplay from "./ProductDisplay";
 
-const LightBox = ({ device, hideLightBox }) => {
+const LightBox = ({ hideLightBox }) => {
+  const displayRef = useRef();
+
+  const handleOnClick = (e) => {
+    if (displayRef.current && !displayRef.current.contains(e.target)) {
+      hideLightBox();
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.lightBox}>
-        <div className={styles.closeIcon}></div>
-      </div>
+    <div className={styles.container} onClick={handleOnClick}>
+      <ProductDisplay
+        isLightBox={true}
+        hideLightBox={hideLightBox}
+        ref={displayRef}
+      />
     </div>
   );
 };
