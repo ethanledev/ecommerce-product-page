@@ -1,9 +1,13 @@
 import styles from "./Page.module.css";
+import ProductDisplay from "./ProductDisplay";
+import ProductInfo from "./ProductInfo";
 
-const Page = () => {
+const Page = ({ itemCount, setItemCount }) => {
   return (
-    <main>
-      <div>Page</div>
+    <main className={styles.main}>
+      <h1 className="srOnly">Page</h1>
+      <ProductDisplay />
+      <ProductInfo itemCount={itemCount} setItemCount={setItemCount} />
     </main>
   );
 };

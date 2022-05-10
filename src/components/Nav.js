@@ -8,7 +8,7 @@ import { ReactComponent as MenuIcon } from "../images/icon-menu.svg";
 import { useEffect, useRef, useState } from "react";
 import Links from "./Links";
 
-const Nav = ({ itemCount, showMenu }) => {
+const Nav = ({ itemCount, showMenu, clearCart }) => {
   const { pathname } = useLocation();
   const cartPreviewRef = useRef();
   const [showCartPreview, setShowCartPreview] = useState(false);
@@ -27,6 +27,11 @@ const Nav = ({ itemCount, showMenu }) => {
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const formatTotal = () => {
+    const total = itemCount * 125;
+    return "$" + total + ".00";
+  };
 
   return (
     <nav className={styles.container}>
@@ -53,24 +58,37 @@ const Nav = ({ itemCount, showMenu }) => {
               <div className={styles.cartPreview}>
                 <div className={styles.title}>Cart</div>
                 <div className={styles.body}>
-                  <div className={styles.itemContainer}>
-                    <div className={styles.item}>
-                      <img
-                        src={require("../images/image-product-1-thumbnail.jpg")}
-                        alt="product 1"
-                      />
-                      <div className={styles.description}>
-                        <div>Fall limited Edition Sneakers</div>
-                        <div>
-                          $125.00 x 3<strong>$375.00</strong>
+                  {itemCount > 0 ? (
+                    <div className={styles.itemContainer}>
+                      <div className={styles.item}>
+                        <img
+                          src={require("../images/image-product-1-thumbnail.jpg")}
+                          alt="product 1"
+                        />
+                        <div className={styles.description}>
+                          <div>Fall limited Edition Sneakers</div>
+                          <div>
+                            $125.00 x {itemCount}
+                            <strong>{formatTotal()}</strong>
+                          </div>
                         </div>
                       </div>
+                      <div onClick={clearCart}>
+                        <DeleteIcon />
+                      </div>
                     </div>
-                    <div>
-                      <DeleteIcon />
+                  ) : (
+                    <div
+                      className={`${styles.itemContainer} ${styles.emptyCart}`}
+                    >
+                      Your cart is empty.
                     </div>
-                  </div>
-                  <Link to="/checkout" className={styles.button}>
+                  )}
+                  <Link
+                    to="/checkout"
+                    className={styles.button}
+                    onClick={() => setShowCartPreview(false)}
+                  >
                     Checkout
                   </Link>
                 </div>

@@ -15,7 +15,7 @@ svg {
 }
 
 .body {
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   font-size: 1.4rem;
 }
 
@@ -48,6 +48,7 @@ svg {
 .cartPreviewContainer {
   position: absolute;
   top: 4.5rem;
+  z-index: 1;
 }
 
 .container {
@@ -56,6 +57,7 @@ svg {
   padding: 0;
   border-bottom: 0.1rem solid var(--grayish-blue);
   height: 10rem;
+  width: 100%;
 }
 
 .description {
@@ -69,6 +71,12 @@ svg {
 
 .description strong {
   margin-left: 1rem;
+}
+
+.emptyCart {
+  justify-content: center !important;
+  font-weight: 700;
+  color: var(--dark-grayish-blue);
 }
 
 .item {
@@ -85,7 +93,7 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 2rem;
+  min-height: 9rem;
 }
 
 .itemCount {

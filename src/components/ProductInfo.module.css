@@ -1,0 +1,90 @@
+button {
+  height: 100%;
+  border: none;
+  background-color: var(--light-grayish-blue);
+  padding: 1.5rem;
+  cursor: pointer;
+  border-radius: 0.6rem;
+}
+
+.addToCartButton {
+  width: 64%;
+  background-color: var(--orange);
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.addToCartButton span {
+  margin-left: 1rem;
+}
+
+.addToCartButton svg path {
+  fill: white;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 3rem;
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4rem;
+}
+
+.currentPrice {
+  font-size: 2.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  color: var(--dark-grayish-blue);
+  font-size: 1.6rem;
+}
+
+.discount {
+  background-color: var(--pale-orange);
+  color: var(--orange);
+  padding: 0.2rem 0.6rem;
+  margin-left: 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: var(--grayish-blue);
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding-top: 0.5rem;
+}
+
+.productName {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.quantity {
+  width: 34%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  background-color: var(--light-grayish-blue);
+  border-radius: 0.6rem;
+}
