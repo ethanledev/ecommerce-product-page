@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as Logo } from "../images/logo.svg";
 import { ReactComponent as CartIcon } from "../images/icon-cart.svg";
 import { ReactComponent as MenuIcon } from "../images/icon-menu.svg";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Links from "./Links";
 import CartPreview from "./CartPreview";
 
