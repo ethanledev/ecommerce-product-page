@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Repo](https://github.com/hieuhmle/ecommerce-product-page)
+- Solution URL: [Github Repo](https://github.com/hieulecoder/ecommerce-product-page)
 - Live Site URL: [Live site](https://hieulecoder.github.io/ecommerce-product-page)
 
 ## My process
